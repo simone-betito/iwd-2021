@@ -1,0 +1,113 @@
+:root {
+  --annotation-color: #86bbbd;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: 75px auto;
+}
+
+.chart {
+  width: 180px;
+}
+
+.annotation {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+  p {
+    color: #666;
+    font-style: oblique;
+    font-size: 15px;
+    margin: 0;
+  }
+  .svg-arrow {
+    margin-left: 10px;
+    transform: rotate(-140deg);
+    path {
+      fill: none;
+      stroke: var(--annotation-color);
+      stroke-width: 1px;
+    }
+
+    #arrowhead {
+      fill: var(--annotation-color);
+      stroke: none;
+    }
+  }
+}
+
+@function randomNum($min, $max) {
+  $rand: random();
+  $randomNum: $min + floor($rand * (($max - $min) + 1));
+
+  @return $randomNum;
+}
+
+.waffle {
+  display: flex;
+  flex-wrap: wrap;
+  width: 180px;
+
+  .block {
+    width: 16px;
+    height: 16px;
+    margin: 1px;
+    transform: translateY(0);
+    @for $i from 0 through 29 {
+      &:nth-child(#{130 - $i}) {
+        animation: falling 600ms ease-out forwards;
+        order: #{randomNum(0, 30)};
+        animation-delay: 3s + (350ms * $i);
+      }
+    }
+
+    &:nth-child(10) {
+      border: 2px solid var(--annotation-color);
+    }
+  }
+}
+
+@keyframes falling {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+
+.state {
+  span {
+    display: inline-block;
+  }
+  .pre-pan {
+    opacity: 1;
+  }
+}
+
+.remove {
+  .pre-pan {
+    opacity: 0;
+    transition: 0.6s ease-in-out opacity;
+  }
+
+  .pan {
+    transform: translateX(-45px);
+    transition: 0.8s ease-in-out transform;
+  }
+}
