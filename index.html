@@ -3,50 +3,63 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <title>IWD 2021</title>
   </head>
   <body>
     <main class="container">
-      <h1>30 Million Women Dropped Out of the Workforce</h1>
-      <h2 class="state"><span class="pre-pan">Pre</span> <span class="pan">Pandemic</span></h2>
-      <div class="chart">
-        <div class="annotation">
-          <p>1 million women</p>
-          <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="20"
-            class="svg-arrow"
-          >
-            <path
-              d="M 40 0 q -6 25 -30 17"
-              stroke="#333"
-              fill="none"
-              marker-end="url(#arrow)"
-              stroke-width="1.25"
-            ></path>
-            <defs>
-              <marker
-                id="arrow"
-                viewBox="0 -5 10 10"
-                refX="5"
-                refY="0"
-                markerWidth="8"
-                markerHeight="8"
-                orient="auto"
-              >
-                <path d="M0,-5L10,0L0,5"></path>
-              </marker>
-            </defs>
-          </svg>
+      <h2 class="state">
+        <span class="pre-pan">Pre</span> <span class="pan">Pandemic Labor Force</span>
+      </h2>
+
+      <div class="chart-holder">
+        <div class="chart">
+          <div class="annotation">
+            <p>10 000 People</p>
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="20"
+              class="svg-arrow"
+            >
+              <path
+                d="M 40 0 q -6 25 -30 17"
+                stroke="#333"
+                fill="none"
+                marker-end="url(#arrow)"
+                stroke-width="1.25"
+              ></path>
+              <defs>
+                <marker
+                  id="arrow"
+                  viewBox="0 -5 10 10"
+                  refX="5"
+                  refY="0"
+                  markerWidth="8"
+                  markerHeight="8"
+                  orient="auto"
+                >
+                  <path d="M0,-5L10,0L0,5"></path>
+                </marker>
+              </defs>
+            </svg>
+          </div>
+          <div class="waffle"></div>
         </div>
-        <div class="waffle"></div>
+        <p>
+          Nearly 80% of the 346,000 workers who vanished from the U.S. labor force in January are
+          women
+        </p>
       </div>
+      <footer>made by @simone.viz</footer>
     </main>
-    <footer></footer>
     <script src="/main.js"></script>
   </body>
 </html>
